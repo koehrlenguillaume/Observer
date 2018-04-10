@@ -1,35 +1,28 @@
-# mypluralize
-A Node.js module that returns the plural form of any noun
+# react-observer-pattern
+A Node.js module that implement the observer pattern in react
 ## Installation 
 ```sh
-npm install mypluralize --save
-yarn add mypluralize
-bower install pluralize --save
+npm install react-observer-pattern --save
 ```
 ## Usage
-### Javascript
-```javascript
-var pluralise = require('mypluralize');
-var boys = pluralise.getPlural('Boy');
-```
-```sh
-Output should be 'Boys'
-```
 ### TypeScript
 ```typescript
-import { getPlural } from 'mypluralize';
-console.log(getPlural('Goose'))
+import { Observer, IObserver } from 'react-observer-pattern';
+
+export class test implements IObserver {
+
+  ReceiveNotification(message: any): void {
+    console.log(message);
+  }
+
+  constructor(){
+    Observer.GetGlobalInstance().RegisterObserver("key", this);
+  }
+}
+
+Observer.GetGlobalInstance().NotifyObservers("key", "message");
 ```
-```sh
-Output should be 'Geese'
-```
-### AMD
-```javascript
-define(function(require,exports,module){
-  var pluralise = require('mypluralize');
-});
-```
-## Test 
-```sh
-npm run test
-```
+
+This sample show you : 
+* How to bind to a specific key
+* How to send an information to a specific key
