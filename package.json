@@ -1,6 +1,6 @@
 {
   "name": "react-observer-pattern",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Node.js module that implement the observer pattern in react",
   "main": "dist/Observer.js",
   "types": "dist/Observer.d.ts",
