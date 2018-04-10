@@ -19,7 +19,9 @@ export class test implements IObserver {
     Observer.GetGlobalInstance().RegisterObserver("key", this);
   }
 }
+```
 
+```typescript
 Observer.GetGlobalInstance().NotifyObservers("key", "message");
 ```
 
